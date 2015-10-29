@@ -16,6 +16,7 @@ h6 {
 
 .clear-fix {
   overflow: auto;
+  list-style-type: none;
 }
 
 .education-entry,
