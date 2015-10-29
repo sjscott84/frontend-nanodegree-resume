@@ -1,4 +1,4 @@
-var bio{
+var bio={
 	"name":"Sarah Joy Scott",
 	"role":"Web Developer",
 	"contacts":
@@ -11,77 +11,116 @@ var bio{
 		},
 	"welcomeMessage":"Hi!",
 	"skills":["Web Development", "Training", "Project Management"],
-	"biopic":images/Sarah.jpg,
+	//"biopic":images/Sarah.jpg,
 	//"display":function
 }
 
-var education{
+var education={
 	"schools":[
 		{
 			"name":"University of Canterbury",
 			"location":"Christchurch, NZ",
 			"degree":"Bachelor of Arts",
 			"majors":"Art History",
-			"dates"://integer (graduation date),
+			"dates":"integer (graduation date)"
 			//"url":"string" 
 		}
 	],
 	"onlineCourse":[
 		{
-			"title":
-			"school":
-			"date"://integer (date finished)
-			"url"://string
+			"title":"Title",
+			"school":"School"
+			//"date":integer (date finished)
+			//"url":string
 		},
 		{
-			"title":
-			"school":
-			"date"://integer (date finished)
-			"url"://string
+			"title":"Title",
+			"school":"School"
+			//"date":integer (date finished)
+			//"url":string
 		}
 	]
 	//display:function
 }
 
-var work{
+var work={
 	"jobs":[
 		{
 			"employer":"TransGrid",
 			"title":"Project Services Officer",
 			"location":"Sydney, Australia",
-			"dates"://string (works with a hyphen between them),
+			//"dates"://string (works with a hyphen between them),
 			"description":"Blah, blah, blah"
 		},
 		{
 			"employer":"Giraffe Learning Cente",
 			"title":"Office Manager",
 			"location":"Sydney, Australia",
-			"dates"://string (works with a hyphen between them),
+			//"dates"://string (works with a hyphen between them),
 			"description":"Blah, blah, blah"
 		},
 		{
 			"employer":"Banque AIG",
 			"title":"Administrative Assistant",
 			"location":"London, England",
-			"dates"://string (works with a hyphen between them),
+			//"dates"://string (works with a hyphen between them),
 			"description":"Blah, blah, blah"
 		}
 	]
 }
 
-var projects{
+var projects={
 	"projects":[
 		{
 			"title":"Project 1",
 			"dates":"string (works with a hyphen between them)",
-			"description":"Blah blah",
-			"images"://array with string urls
+			"description":"Blah blah"
+			//"images"://array with string urls
 		},
 		{
 			"title":"Project 2",
 			"dates":"string (works with a hyphen between them)",
-			"description":"Blah blah",
-			"images"://array with string urls
+			"description":"Blah blah"
+			//"images"://array with string urls
 		}
 	]
+	//display:function
 }
+
+bio.display = function(){
+
+	var formattedName=HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+	
+
+	var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+
+	var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+
+	var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
+
+	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
+};
+
+bio.display();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
