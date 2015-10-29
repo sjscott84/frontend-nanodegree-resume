@@ -9,9 +9,9 @@ var bio={
 			"twitter":"N/A",
 			"location":"San Francisco, CA"
 		},
-	"welcomeMessage":"Hi!",
-	"skills":["Web Development", "Training", "Project Management"],
-	//"biopic":images/Sarah.jpg,
+	"welcomeMessage":"Hi! Welcome to my resume, I hope you enjoy your stay!",
+	"skills":["Web Development", "Training and Assessment", "Project Management"],
+	"biopic":"images/Sarah.jpg"
 	//"display":function
 }
 
@@ -106,6 +106,20 @@ bio.display = function(){
 
 	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedLocation);
+
+	var formattedImage=HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedImage);
+
+	var formattedMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedMessage);
+
+	if(bio.skills.length>0){
+		$("#header").append(HTMLskillsStart);
+			for(var i=0; i<bio.skills.length; i++){
+			var formattedSkills=HTMLskills.replace("%data%", bio.skills[i]);
+			$("#skills").append(formattedSkills);
+			}
+	};
 };
 
 bio.display();
