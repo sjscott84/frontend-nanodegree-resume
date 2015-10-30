@@ -28,15 +28,33 @@ var education={
 	"onlineCourse":[
 		{
 			"title":"Front End Web Development Nanodegree",
-			"school":"Udacity"
-			//"date":integer (date finished)
-			//"url":string
+			"school":"Udacity",
+			"date":"2015",
+			"url":"https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+		},
+		{
+			"title":"JavaScript Road Trip (Parts 1, 2, 3)",
+			"school":"Code School",	
+			"date":"2015",
+			"url":"https://www.codeschool.com/paths/javascript"
+		},
+		{
+			"title":"Javascript Best Practices",
+			"school":"Code School",
+			"date":"2015",
+			"url":"https://www.codeschool.com/paths/javascript"
+		},
+		{
+			"title":"Shaping up with Angular.js",
+			"school":"Code School",
+			"date":"2015",
+			"url":"https://www.codeschool.com/courses/shaping-up-with-angular-js"
 		},
 		{
 			"title":"Blasting off with Bootstrap",
-			"school":"Code School"
-			//"date":integer (date finished)
-			//"url":string
+			"school":"Code School",
+			"date":"2015",
+			"url":"https://www.codeschool.com/courses/blasting-off-with-bootstrap"
 		}
 	]
 }
