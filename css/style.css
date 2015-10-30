@@ -212,6 +212,10 @@ span {
   padding-bottom: 5%;
 }
 
+.hook {
+  background-color: red;
+}
+
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {

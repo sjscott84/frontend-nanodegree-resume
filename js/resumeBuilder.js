@@ -90,14 +90,14 @@ var projects={
 		{
 			"title":"Project 1",
 			"dates":"2010",
-			"description":"Blah blah"
-			//"images"://array with string urls
+			"description":"Blah blah",
+			"images":["http://placehold.it/350x150", "http://placehold.it/350x150", "http://placehold.it/350x150"]
 		},
 		{
 			"title":"Project 2",
 			"dates":"2009",
-			"description":"Blah blah"
-			//"images"://array with string urls
+			"description":"Blah blah",
+			"images":["http://placehold.it/350x150", "http://placehold.it/350x150"]
 		}
 	]
 }
@@ -183,15 +183,21 @@ projects.display = function(){
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 
-			//if statment to add images needs to go here
+			if(projects.projects[project].images.length>0){
+				for(var i=0; i<projects.projects[project].images.length; i++){
+					var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[i]);
+					$(".project-entry:last").append(formattedImages);
+				};
+			};
 	};
 };
 
-projects.education = function(){
+education.display = function(){
 	for(school in education.schools){
 		$("#education").append(HTMLschoolStart);
 
 		var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
+			formattedSchool = formattedSchool.replace("%url%", education.schools[school].url);
 		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedCourse = formattedSchool+formattedDegree;
 		$(".education-entry:last").append(formattedCourse);
@@ -206,11 +212,12 @@ projects.education = function(){
 		$(".education-entry:last").append(formattedMajors);
 	};
 
-	$(".education-entry:last").append(HTMLonlineClasses);//why not aligned
+	$(".education-entry:last").append(HTMLonlineClasses);
 
 	for(course in education.onlineCourse){
 
 		var formattedCourse = HTMLonlineTitle.replace("%data%", education.onlineCourse[course].title);
+			formattedCourse = formattedCourse.replace("%url%", education.onlineCourse[course].url);
 		var formattedTitle = HTMLonlineSchool.replace("%data%", education.onlineCourse[course].school);
 		var formattedOnlineCourse = formattedCourse+formattedTitle;
 		$(".education-entry:last").append(formattedOnlineCourse);
@@ -222,9 +229,10 @@ projects.education = function(){
 bio.display();
 work.display();
 projects.display();
-projects.education();
+education.display();
 
 $("#mapDiv").append(googleMap);
+$('#hook').append(googleMap);
 
 
 
