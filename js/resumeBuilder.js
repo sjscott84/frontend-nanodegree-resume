@@ -12,14 +12,13 @@ var bio={
 	"welcomeMessage":"Hi! Welcome to my resume, I hope you enjoy your stay!",
 	"skills":["Web Development", "Training and Assessment", "Project Management"],
 	"biopic":"images/Sarah.jpg"
-	//"display":function
 }
 
 var education={
 	"schools":[
 		{
 			"name":"University of Canterbury",
-			"location":"Christchurch, NZ",
+			"location":"Christchurch, New Zealand",
 			"degree":"Bachelor of Arts",
 			"majors":"Art History",
 			"dates":"2006",
@@ -40,7 +39,6 @@ var education={
 			//"url":string
 		}
 	]
-	//display:function
 }
 
 var work={
@@ -84,7 +82,6 @@ var projects={
 			//"images"://array with string urls
 		}
 	]
-	//display:function
 }
 
 bio.display = function(){
@@ -208,6 +205,8 @@ bio.display();
 work.display();
 projects.display();
 projects.education();
+
+$("#mapDiv").append(googleMap);
 
 
 
