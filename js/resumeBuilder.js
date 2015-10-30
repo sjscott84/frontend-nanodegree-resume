@@ -49,21 +49,21 @@ var work={
 			"employer":"TransGrid",
 			"title":"Project Services Officer",
 			"location":"Sydney, Australia",
-			//"dates"://string (works with a hyphen between them),
+			"dates":"2010-2014",
 			"description":"Blah, blah, blah"
 		},
 		{
 			"employer":"Giraffe Learning Cente",
 			"title":"Office Manager",
 			"location":"Sydney, Australia",
-			//"dates"://string (works with a hyphen between them),
+			"dates":"2009-2010",
 			"description":"Blah, blah, blah"
 		},
 		{
 			"employer":"Banque AIG",
 			"title":"Administrative Assistant",
 			"location":"London, England",
-			//"dates"://string (works with a hyphen between them),
+			"dates":"2007-2009",
 			"description":"Blah, blah, blah"
 		}
 	]
@@ -73,13 +73,13 @@ var projects={
 	"projects":[
 		{
 			"title":"Project 1",
-			"dates":"string (works with a hyphen between them)",
+			"dates":"2010",
 			"description":"Blah blah"
 			//"images"://array with string urls
 		},
 		{
 			"title":"Project 2",
-			"dates":"string (works with a hyphen between them)",
+			"dates":"2009",
 			"description":"Blah blah"
 			//"images"://array with string urls
 		}
@@ -122,10 +122,48 @@ bio.display = function(){
 	};
 };
 
+work.display = function(){
+	for(job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedPosition = formattedEmployer+formattedTitle
+		$(".work-entry:last").append(formattedPosition);
+
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
+
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	};
+};
+
+projects.display = function(){
+	for(project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+			//if statment to add images needs to go here
+	};
+};
+
+//need to add education
+
 bio.display();
-
-
-
+work.display();
+projects.display();
 
 
 
