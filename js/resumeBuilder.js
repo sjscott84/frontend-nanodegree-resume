@@ -22,20 +22,20 @@ var education={
 			"location":"Christchurch, NZ",
 			"degree":"Bachelor of Arts",
 			"majors":"Art History",
-			"dates":"integer (graduation date)"
-			//"url":"string" 
+			"dates":"2006",
+			"url":"http://www.canterbury.ac.nz/" 
 		}
 	],
 	"onlineCourse":[
 		{
-			"title":"Title",
-			"school":"School"
+			"title":"Front End Web Development Nanodegree",
+			"school":"Udacity"
 			//"date":integer (date finished)
 			//"url":string
 		},
 		{
-			"title":"Title",
-			"school":"School"
+			"title":"Blasting off with Bootstrap",
+			"school":"Code School"
 			//"date":integer (date finished)
 			//"url":string
 		}
@@ -120,6 +120,19 @@ bio.display = function(){
 			$("#skills").append(formattedSkills);
 			}
 	};
+
+	var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#footerContacts").append(formattedMobile);
+
+	var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
+	$("#footerContacts").append(formattedEmail);
+
+	var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#footerContacts").append(formattedGithub);
+
+	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#footerContacts").append(formattedLocation);
+
 };
 
 work.display = function(){
@@ -159,11 +172,42 @@ projects.display = function(){
 	};
 };
 
-//need to add education
+projects.education = function(){
+	for(school in education.schools){
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedCourse = formattedSchool+formattedDegree;
+		$(".education-entry:last").append(formattedCourse);
+
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(formattedDates);
+
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedLocation);
+
+		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+		$(".education-entry:last").append(formattedMajors);
+	};
+
+	$(".education-entry:last").append(HTMLonlineClasses);//why not aligned
+
+	for(course in education.onlineCourse){
+
+		var formattedCourse = HTMLonlineTitle.replace("%data%", education.onlineCourse[course].title);
+		var formattedTitle = HTMLonlineSchool.replace("%data%", education.onlineCourse[course].school);
+		var formattedOnlineCourse = formattedCourse+formattedTitle;
+		$(".education-entry:last").append(formattedOnlineCourse);
+		//add date and URL
+	};
+
+};
 
 bio.display();
 work.display();
 projects.display();
+projects.education();
 
 
 
