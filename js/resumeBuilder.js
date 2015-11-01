@@ -234,6 +234,10 @@ education.display();
 $("#mapDiv").append(googleMap);
 $('#hook').append(googleMap);
 
+$("#toggle").click(function() {
+	$("#workExperience").toggle();
+});
+
 
 
 
