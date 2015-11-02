@@ -125,16 +125,13 @@ a {
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  display: none;
 }
 
 .gray-heading {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  /*clear:both*/;
+  clear:both;
 }
-
-
 
 .dark-gray {
   background-color: #4a4a4a;
@@ -204,6 +201,12 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+  .projects {
+  display: none;
+  }
+  .gray {
+    display:none;
   }
 }
 

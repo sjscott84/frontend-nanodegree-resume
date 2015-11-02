@@ -234,14 +234,29 @@ education.display();
 $("#mapDiv").append(googleMap);
 $('#hook').append(googleMap);
 
-$("#toggle").click(function() {
-	$("#workExperience").toggle();
-});
+function toggleSections (){
 
+	console.log("It's resizing!")
+	console.log(matchMedia('only screen and (max-width: 750px)').matches);
 
+	if(matchMedia('only screen and (max-width: 750px)').matches) {
+		$("#toggleWork").click(function() {
+			$(".toggleWork").toggle();
+		});
 
+		$("#toggleProjects").click(function() {
+			$(".toggleProjects").toggle();
+		});
 
-
+		$("#toggleEducation").click(function() {
+			$(".toggleEducation").toggle();
+		});
+	}//else{
+		//$('#toggleWork').unbind('click');
+	//}
+};
+toggleSections()
+window.addEventListener("resize", toggleSections);
 
 
 
