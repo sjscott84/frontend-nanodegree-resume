@@ -130,12 +130,13 @@ a {
 .gray-heading {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  clear:both;
+  /*clear:both;*/
 }
 
 .dark-gray {
   background-color: #4a4a4a;
 }
+
 
 /* TODO: Replace with image later */
 #header {
@@ -202,10 +203,13 @@ span {
   .welcome-message {
     display: none;
   }
-  .projects {
-  display: none;
+  #workExperience {
+    display: none;
   }
-  .gray {
+  #projects {
+    display:none;
+  }
+  #education {
     display:none;
   }
 }

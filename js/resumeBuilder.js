@@ -234,33 +234,18 @@ education.display();
 $("#mapDiv").append(googleMap);
 $('#hook').append(googleMap);
 
-function toggleSections (){
+var mq = window.matchMedia('(max-width: 750px)');
+mq.addEventListener("resize", toggle_visibility);
 
-	console.log("It's resizing!")
-	console.log(matchMedia('only screen and (max-width: 750px)').matches);
+function toggle_visibility(id) {
 
-	if(matchMedia('only screen and (max-width: 750px)').matches) {
-		$("#toggleWork").click(function() {
-			$(".toggleWork").toggle();
-		});
-
-		$("#toggleProjects").click(function() {
-			$(".toggleProjects").toggle();
-		});
-
-		$("#toggleEducation").click(function() {
-			$(".toggleEducation").toggle();
-		});
-	}//else{
-		//$('#toggleWork').unbind('click');
-	//}
-};
-toggleSections()
-window.addEventListener("resize", toggleSections);
-
-
-
-
-
-
+	if (mq.matches){
+		var e = document.getElementById(id);
+			if(e.style.display !== 'block'){
+				e.style.display = 'block';
+			}else{
+				e.style.display = 'none';
+			}
+		}
+}
 
