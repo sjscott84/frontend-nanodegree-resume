@@ -27,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #491942;
   line-height: 48px;
   display: inline;
 }
@@ -35,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #491942;
   line-height: 29px;
   padding: 10px;
 }
@@ -95,10 +95,18 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #52D1DC;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+
+hr {
+  height: 2px;
+  border-width: 0;
+  border-color: #52D1DC;
+  background-color: #52D1DC;
+  color: #52D1DC;
 }
 
 .welcome-message {
@@ -106,19 +114,29 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+  text-align: center;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  font-family: "Roboto", sans-serif;
+  color: #491942;
   display: none;
+  font-style: bold;
+  font-size: 25px;
+  line-height: 22px;
+  padding: 0;
+}
+
+.allSkills {
+  display: inline;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #491942;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #491942;
 }
 
 .white-text {
@@ -143,7 +161,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #D9D9DD;
 }
 
 .flex-box {
@@ -152,7 +170,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 5px;
 }
 
 .center-content {
@@ -164,10 +182,11 @@ ul {
 }
 
 .biopic {
-  float: left;
+  margin: auto;
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -180,6 +199,14 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+.footer {
+  background-color: #52D1DC;
+}
+
+#footerContacts {
+  background-color: #D9D9DD;
 }
 
 /* Media queries to handle various device widths */

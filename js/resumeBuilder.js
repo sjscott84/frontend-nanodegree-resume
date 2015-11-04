@@ -136,11 +136,7 @@ bio.display = function(){
 	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedLocation);
 
-	var formattedImage=HTMLbioPic.replace("%data%", bio.biopic);
-	$("#header").append(formattedImage);
-
-	var formattedMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").append(formattedMessage);
+	$("#header").append("<hr />");
 
 	if(bio.skills.length>0){
 		$("#header").append(HTMLskillsStart);
@@ -149,6 +145,12 @@ bio.display = function(){
 			$("#skills").append(formattedSkills);
 			}
 	};
+
+	var formattedImage=HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedImage);
+
+	var formattedMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedMessage);
 
 	var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#footerContacts").append(formattedMobile);
