@@ -55,6 +55,12 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLprofessionalClasses = '<h3 class="onlineCourse">Professional Qualifications</h3>';
+var HTMLprofessionalTitle = '<a href="%url%" target="_blank">%data%';
+var HTMLprofessionalSchool = ' - %data%</a>';
+var HTMLprofessionalDates = '<div class="date-text">%data%</div>';
+var HTMLprofessionalURL = '<br><a href="#">%data%</a>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

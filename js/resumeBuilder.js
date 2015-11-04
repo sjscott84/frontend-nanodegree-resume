@@ -56,6 +56,20 @@ var education={
 			"date":"2015",
 			"url":"https://www.codeschool.com/courses/blasting-off-with-bootstrap"
 		}
+	],
+	"professionalQualifications":[
+		{
+			"title":"Certificate IV in Project Management",
+			"school":"Kepner Tregoe",
+			"date":"2012",
+			"url":"https://www.kepner-tregoe.com"
+		},
+		{
+			"title":"Certificate IV in Training and Assessment",
+			"school":"plenty training",
+			"date":"2012",
+			"url":"https://www.plentytraining.edu.au"
+		}
 	]
 }
 
@@ -221,7 +235,17 @@ education.display = function(){
 		var formattedTitle = HTMLonlineSchool.replace("%data%", education.onlineCourse[course].school);
 		var formattedOnlineCourse = formattedCourse+formattedTitle;
 		$(".education-entry:last").append(formattedOnlineCourse);
-		//add date and URL
+	};
+
+	$(".education-entry:last").append(HTMLprofessionalClasses);
+
+	for(professional in education.professionalQualifications){
+
+		var formattedCourse = HTMLonlineTitle.replace("%data%", education.professionalQualifications[professional].title);
+			formattedCourse = formattedCourse.replace("%url%", education.professionalQualifications[professional].url);
+		var formattedTitle = HTMLonlineSchool.replace("%data%", education.professionalQualifications[professional].school);
+		var formattedOnlineCourse = formattedCourse+formattedTitle;
+		$(".education-entry:last").append(formattedOnlineCourse);
 	};
 
 };
@@ -234,6 +258,7 @@ education.display();
 $("#mapDiv").append(googleMap);
 $('#hook').append(googleMap);
 
+//shrinks fields on window rezise and enables toggle function
 var mq = window.matchMedia('(max-width: 750px)');
 mq.addEventListener("resize", toggle_visibility);
 
@@ -249,3 +274,11 @@ function toggle_visibility(id) {
 		}
 }
 
+//Changes biopic on mouseover
+$(".biopic").mouseover(function(){
+	$(".biopic").attr("src", "images/fry.jpg");
+});
+
+$(".biopic").mouseout(function(){
+	$(".biopic").attr("src", "images/Sarah.jpg");
+});
