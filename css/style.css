@@ -66,6 +66,10 @@ h5 {
   padding-top:10px 5%;
 }
 
+.rwd-break{
+  display: inline;
+}
+
 
 .date-text {
   font-style: italic;
@@ -213,6 +217,9 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+  .rwd-break{
+    display: block;
   }
   #workExperience {
     display: none;
