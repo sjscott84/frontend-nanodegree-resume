@@ -141,8 +141,8 @@ bio.display = function(){
 	if(bio.skills.length>0){
 		$("#header").append(HTMLskillsStart);
 			for(var i=0; i<bio.skills.length; i++){
-			var formattedSkills=HTMLskills.replace("%data%", bio.skills[i]);
-			$("#skills").append(formattedSkills);
+				var formattedSkills=HTMLskills.replace("%data%", bio.skills[i]);
+				$("#skills").append(formattedSkills);
 			}
 	};
 
@@ -258,29 +258,29 @@ projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
-$('#hook').append(googleMap);
+$("#hook").append(googleMap);
 
 //shrinks fields on window rezise and enables toggle function
-var mq = window.matchMedia('(max-width: 750px)');
+var mq = window.matchMedia("(max-width: 750px)");
 mq.addEventListener("resize", toggle_visibility);
 
 function toggle_visibility(id) {
 
 	if (mq.matches){
 		var e = document.getElementById(id);
-			if(e.style.display !== 'block'){
-				e.style.display = 'block';
+			if(e.style.display !== "block"){
+				e.style.display = "block";
 			}else{
-				e.style.display = 'none';
+				e.style.display = "none";
 			}
 		}
 }
 
-//Changes biopic on mouseover
-$(".biopic").mouseover(function(){
-	$(".biopic").attr("src", "images/fry.jpg");
-});
+//TODO Add new photos for this function which changes biopic on mouseover
+//$(".biopic").mouseover(function(){
+	//$(".biopic").attr("src", "images/fry.jpg");
+//});
 
-$(".biopic").mouseout(function(){
-	$(".biopic").attr("src", "images/Sarah.jpg");
-});
+//$(".biopic").mouseout(function(){
+	//$(".biopic").attr("src", "images/Sarah.jpg");
+//});

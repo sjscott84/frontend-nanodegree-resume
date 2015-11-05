@@ -62,7 +62,7 @@ h5 {
 }
 
 .onlineCourse {
-  padding-left:0px;
+  padding-left:0;
   padding-top:10px 5%;
 }
 
@@ -95,22 +95,21 @@ p {
 }
 
 a {
-  color: #52D1DC;
+  color: #52d1dc;
   text-decoration: none;
-  /*margin-top: 10px;*/
   display: block;
 }
 
 a:hover {
-  color: #52D1DC;
+  color: #52d1dc;
 }
 
 hr {
   height: 2px;
   border-width: 0;
-  border-color: #52D1DC;
-  background-color: #52D1DC;
-  color: #52D1DC;
+  border-color: #52c1cc;
+  background-color: #52d1dc;
+  color: #52d1dc;
 }
 
 .welcome-message {
@@ -165,7 +164,7 @@ hr {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #D9D9DD;
+  background-color: #d9d9dd;
 }
 
 .flex-box {
@@ -206,11 +205,11 @@ span {
 }
 
 .footer {
-  background-color: #52D1DC;
+  background-color: #52d1dc;
 }
 
 #footerContacts {
-  background-color: #D9D9DD;
+  background-color: #d9d9dd;
 }
 
 /* Media queries to handle various device widths */
